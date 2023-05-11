@@ -1,0 +1,29 @@
+<h1>Cart</h1>
+
+<p>
+  <a routerLink="/shipping">
+    Shipping Prices
+  </a>
+</p>
+
+<ul class="list-group w-50"  [ngClass]="{'mb-3': items.length > 0}">
+  <li *ngFor="let item of items" class="list-group-item d-flex justify-content-between align-items-center">
+    {{ item.name }}
+    <span class="badge badge-primary badge-pill">
+      {{ item.price | currency }}
+    </span>
+  </li>
+</ul>
+
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)" class="example-form">
+  <mat-form-field class="example-full-width">
+    <mat-label>Name</mat-label>
+    <input matInput formControlName="name">
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Address</mat-label>
+    <input matInput formControlName="address">
+  </mat-form-field>
+
+  <button type="submit" mat-raised-button color="primary">Share</button>
+</form>

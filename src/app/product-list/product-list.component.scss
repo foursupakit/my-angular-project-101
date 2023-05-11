@@ -1,0 +1,22 @@
+.show {
+  display: block;
+  background-color: rgba(46, 44, 44, 0.3);
+}
+
+.form-control {
+  &.input {
+    border-radius: 0;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+
+    &:focus {
+      border-color: inherit;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      border-top: 0;
+      border-left: 0;
+      border-right: 0;
+    }
+  }
+}
